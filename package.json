@@ -1,0 +1,24 @@
+{
+  "name": "airllm-desktop",
+  "version": "1.0.0",
+  "description": "AirLLM için tek tıklamalı OpenAI uyumlu yerel API uygulaması",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:linux": "electron-builder --linux AppImage --publish never"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.tapsin.airllmdesktop",
+    "productName": "AirLLM Desktop",
+    "files": ["main.js", "preload.js", "renderer/**/*", "scripts/**/*", "airllm_openai_server.py", "package.json"],
+    "extraResources": [
+      { "from": "airllm_openai_server.py", "to": "airllm_openai_server.py" },
+      { "from": "requirements.txt", "to": "requirements.txt" }
+    ],
+    "linux": { "target": ["AppImage"], "category": "Development;" }
+  }
+}

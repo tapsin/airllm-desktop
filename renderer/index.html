@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AirLLM Desktop</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="shell">
+  <header><div class="brand"><div class="mark">A</div><div><div class="eyebrow">LOCAL INFERENCE</div><h1>AirLLM <span>Desktop</span></h1></div></div><div class="status"><i id="lamp"></i><span id="state">Hazır</span></div></header>
+  <section class="intro"><div class="eyebrow">MODEL SUNUCUSU</div><h2>Modelini bağla,<br><em>API’ni başlat.</em></h2><p>Hugging Face model adresini gir. Uygulama gereken Python bileşenlerini ve modeli indirip yerel API’yi hazırlasın.</p></section>
+  <section class="card"><label for="model">HUGGING FACE MODEL ADRESİ</label><input id="model" placeholder="ör. Qwen/Qwen2.5-7B-Instruct" autocomplete="off"><div class="hint">Hugging Face depo kimliği veya erişilebilir yerel model klasörü</div>
+    <details><summary>Özel erişim token’ı <span>İsteğe bağlı</span></summary><input id="token" type="password" placeholder="hf_…" autocomplete="off"><div class="hint">Yalnızca erişim kısıtlı modeller için. Bu bilgisayarda saklanmaz.</div></details>
+    <div class="actions"><button id="start" class="primary"><span>▶</span> Modeli başlat</button><button id="stop" class="secondary" disabled>Durdur</button></div>
+    <div class="progress-wrap"><div class="progress-head"><span id="progress">Başlamak için model adresi girin.</span><span id="percent"></span></div><div class="track"><div id="bar"></div></div></div>
+  </section>
+  <section id="api" class="api hidden"><div><div class="eyebrow">OPENAI UYUMLU API</div><code id="url">http://127.0.0.1:8000/v1</code></div><button id="copy">Adresi kopyala</button></section>
+  <details class="logs"><summary>İşlem günlüğü</summary><pre id="log">Kurulum ve model yükleme ayrıntıları burada görünür.</pre></details>
+  <footer><span>Model dosyaları bu uygulamanın dışında, Hugging Face önbelleğinde saklanır.</span><span>API: <b>127.0.0.1:8000</b></span></footer>
+</main><script src="app.js"></script></body></html>
